@@ -5,7 +5,7 @@ using SistemaDeControlPersonal.Persistencia;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("personal_db");
+var connectionString = string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PERSONAL_DB")) ? builder.Configuration.GetConnectionString("personal_db") : Environment.GetEnvironmentVariable("PERSONAL_DB");
 
 var mysqlVersion = new MySqlServerVersion("8.0.30");
 
