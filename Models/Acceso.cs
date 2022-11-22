@@ -12,7 +12,7 @@ public class Acceso
 
     [Required]
     [ForeignKey("IdEmpleado")]
-    public required Empleado Empleado { get; set; }
+    public Empleado Empleado { get; set; }
 
     [Required]
     public DateTime Hora { get; set; } = DateTime.Now;
